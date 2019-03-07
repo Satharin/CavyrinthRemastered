@@ -172,6 +172,30 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Check if player really wants to leave the game
+    public void exitGame(View view) {
+
+        AlertDialog.Builder exit = new AlertDialog.Builder(this);
+
+        exit.setMessage("Are you sure you want to exit the application?")
+                .setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                     System.exit(0);
+                     }
+                    })
+                .setPositiveButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                    }
+                    })
+                .create();
+        exit.show();
+
+    }
+
     @Override
     public void onBackPressed() {
 
