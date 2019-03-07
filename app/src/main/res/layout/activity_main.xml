@@ -4,24 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
     android:background="#575757"
     tools:context="com.example.rharasimiuk.djangorestlearn.MainActivity">
 
     <TextView
         android:id="@+id/showtext"
-        android:layout_width="377dp"
-        android:layout_height="432dp"
-        android:layout_below="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="455dp"
+        android:layout_above="@+id/buttonHunt"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="#ffffff"
+        android:scrollbars="vertical"
         android:text=""
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/buttonHunt"
@@ -44,7 +46,7 @@
         android:text="Statistics" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonExp"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonStats"
@@ -52,12 +54,14 @@
         android:onClick="exptable"
         android:text="Exp Table" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/buttonExp"
+        android:layout_centerHorizontal="true"
+        android:onClick="exitGame"
+        android:text="Exit" />
 
 
 </RelativeLayout>
