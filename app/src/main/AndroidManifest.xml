@@ -29,6 +29,26 @@
             android:name=".FightActivity"
             android:label="Battle"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuestsActivity"
+            android:label="Quests"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EquipmentActivity"
+            android:label="Equipment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShopActivity"
+            android:label="Shop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SkillsActivity"
+            android:label="Skills"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DepotActivity"
+            android:label="Depot"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

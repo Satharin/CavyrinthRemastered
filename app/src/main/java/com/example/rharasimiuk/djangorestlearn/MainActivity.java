@@ -55,6 +55,71 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Go to quests activity
+    public void quests(View view) {
+
+        //Clear textView from MainActivity
+        TextView mainActivity = (TextView) findViewById(R.id.showtext);
+        mainActivity.clearComposingText();
+        mainActivity.scrollTo(0, 0);
+
+        startActivity(new Intent(getApplicationContext(), QuestsActivity.class));
+        finish();
+
+    }
+
+    //Go to equipment activity
+    public void equipment(View view) {
+
+        //Clear textView from MainActivity
+        TextView mainActivity = (TextView) findViewById(R.id.showtext);
+        mainActivity.clearComposingText();
+        mainActivity.scrollTo(0, 0);
+
+        startActivity(new Intent(getApplicationContext(), EquipmentActivity.class));
+        finish();
+
+    }
+
+    //Go to shop activity
+    public void shop(View view) {
+
+        //Clear textView from MainActivity
+        TextView mainActivity = (TextView) findViewById(R.id.showtext);
+        mainActivity.clearComposingText();
+        mainActivity.scrollTo(0, 0);
+
+        startActivity(new Intent(getApplicationContext(), ShopActivity.class));
+        finish();
+
+    }
+
+    //Go to skills activity
+    public void skills(View view) {
+
+        //Clear textView from MainActivity
+        TextView mainActivity = (TextView) findViewById(R.id.showtext);
+        mainActivity.clearComposingText();
+        mainActivity.scrollTo(0, 0);
+
+        startActivity(new Intent(getApplicationContext(), SkillsActivity.class));
+        finish();
+
+    }
+
+    //Go to depot activity
+    public void depot(View view) {
+
+        //Clear textView from MainActivity
+        TextView mainActivity = (TextView) findViewById(R.id.showtext);
+        mainActivity.clearComposingText();
+        mainActivity.scrollTo(0, 0);
+
+        startActivity(new Intent(getApplicationContext(), DepotActivity.class));
+        finish();
+
+    }
+
     //Display character's statistics
     public void statistics(View view) {
         getPlayerIdStats();
