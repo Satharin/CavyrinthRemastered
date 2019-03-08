@@ -63,5 +63,76 @@
         android:onClick="exitGame"
         android:text="Exit" />
 
+    <Button
+        android:id="@+id/buttonQuests"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/showtext"
+        android:onClick="quests"
+        android:layout_toStartOf="@+id/buttonHunt"
+        android:text="Quests" />
+
+    <Button
+        android:id="@+id/buttonEquipment"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/buttonQuests"
+        android:layout_below="@+id/buttonHunt"
+        android:onClick="equipment"
+        android:layout_marginTop="-175dp"
+        android:text="Equipment" />
+
+    <Button
+        android:id="@+id/buttonShop"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/buttonQuests"
+        android:layout_below="@+id/buttonStats"
+        android:onClick="shop"
+        android:text="Shop" />
+
+    <Button
+        android:id="@+id/buttonSkills"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonHunt"
+        android:layout_marginTop="-175dp"
+        android:onClick="skills"
+        android:layout_toEndOf="@+id/buttonHunt"
+        android:text="Skills" />
+
+    <Button
+        android:id="@+id/buttonDepot"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttonSkills"
+        android:layout_below="@+id/buttonStats"
+        android:onClick="depot"
+        android:text="Depot" />
+
+    <Button
+        android:id="@+id/buttonCraft"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/showtext"
+        android:layout_toEndOf="@+id/buttonHunt"
+        android:text="Craft" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonExp"
+        android:layout_toEndOf="@+id/buttonHunt"
+        android:text="Logout" />
+
+    <Button
+        android:id="@+id/buttonRanking"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/buttonQuests"
+        android:layout_below="@+id/buttonExp"
+        android:text="Ranking" />
+
 
 </RelativeLayout>

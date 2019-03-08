@@ -15,8 +15,15 @@ public class FightActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fight);
     }
 
+    //Go to MainActivity
     public void escape(View view) {
+        //saveGame();
+        //saveSkills();
 
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        //afterRun = 1;
+        //FightActivity.dataPacketFight.putInt("afterRun", afterRun);
+        finish();
     }
 
     public void spell(View view) {
