@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,10 +28,16 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     //Character statistics and equipment
-    String player_name, id_player;
+    String player_name, player_id;
+
     int player_hp, player_mp, player_level, player_magic_level, player_experience, player_gold,
             player_capacity, player_attack, player_defence, player_critical, player_critical_chance,
-            player_skill_points, player_magic_experience;
+            player_skill_points, player_magic_experience, player_eq_helmet, player_eq_armor, player_eq_legs,
+            player_eq_boots, player_eq_weapon, player_eq_shield, player_eq_ring_left, player_eq_ring_right,
+            player_eq_amulet, player_used_hp_sp, player_used_mp_sp, player_used_attack_sp,
+            player_used_defence_sp, player_used_critical_sp, player_used_critical_chance_sp,
+            player_health_potions, player_mana_potions;
+
     ProgressDialog loading;
     ArrayList<Integer> expTable = new ArrayList<Integer>();
 
@@ -75,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         TextView mainActivity = (TextView) findViewById(R.id.showtext);
         mainActivity.clearComposingText();
         mainActivity.scrollTo(0, 0);
+        saveGame();
 
         startActivity(new Intent(getApplicationContext(), EquipmentActivity.class));
         finish();
@@ -216,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject jsonobj2 = jsonarray.getJSONObject(i);
                     if (jsonobj2.getString("name").equals("Satharin")){
                         player_name = jsonobj2.getString("name");
+                        player_id = jsonobj2.getString("id_player");
                         player_hp = jsonobj2.getInt("hp");
                         player_mp = jsonobj2.getInt("mp");
                         player_level = jsonobj2.getInt("level");
@@ -224,7 +233,30 @@ public class MainActivity extends AppCompatActivity {
                         player_defence = jsonobj2.getInt("defence");
                         player_experience = jsonobj2.getInt("experience");
                         player_gold = jsonobj2.getInt("gold");
+                        player_capacity = jsonobj2.getInt("capacity");
+                        player_critical = jsonobj2.getInt("critical");
+                        player_critical_chance = jsonobj2.getInt("critical_chance");
+                        player_eq_helmet = jsonobj2.getInt("eq_helmet");
+                        player_eq_armor = jsonobj2.getInt("eq_armor");
+                        player_eq_legs = jsonobj2.getInt("eq_legs");
+                        player_eq_boots = jsonobj2.getInt("eq_boots");
+                        player_eq_weapon = jsonobj2.getInt("eq_weapon");
+                        player_eq_shield = jsonobj2.getInt("eq_shield");
+                        player_eq_ring_left = jsonobj2.getInt("eq_ring_left");
+                        player_eq_ring_right = jsonobj2.getInt("eq_ring_right");
+                        player_eq_amulet = jsonobj2.getInt("eq_amulet");
+                        player_skill_points = jsonobj2.getInt("skill_points");
+                        player_used_hp_sp = jsonobj2.getInt("used_hp_sp");
+                        player_used_mp_sp = jsonobj2.getInt("used_mp_sp");
+                        player_used_attack_sp = jsonobj2.getInt("used_attack_sp");
+                        player_used_defence_sp = jsonobj2.getInt("used_defence_sp");
+                        player_used_critical_sp = jsonobj2.getInt("used_critical_sp");
+                        player_used_critical_chance_sp = jsonobj2.getInt("used_critical_chance_sp");
+                        player_health_potions = jsonobj2.getInt("health_potions");
+                        player_mana_potions = jsonobj2.getInt("mana_potions");
+                        player_magic_experience = jsonobj2.getInt("magic_experience");
                         loading.dismiss();
+                        //saveGame();
                         break;
                     }
                 }
@@ -281,6 +313,46 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .create();
         exit.show();
+
+    }
+
+    public void saveGame() {
+
+        SharedPreferences saveGame = getSharedPreferences("Save", MODE_PRIVATE);
+        SharedPreferences.Editor save = saveGame.edit();
+        save.putString("player_name", player_name);
+        save.putString("player_id", player_id);
+        save.putInt("player_hp", player_hp);
+        save.putInt("player_mp", player_mp);
+        save.putInt("player_level", player_level);
+        save.putInt("player_magic_level", player_magic_level);
+        save.putInt("player_attack", player_attack);
+        save.putInt("player_defence", player_defence);
+        save.putInt("player_experience", player_experience);
+        save.putInt("player_gold", player_gold);
+        save.putInt("player_capacity", player_capacity);
+        save.putInt("player_critical", player_critical);
+        save.putInt("player_critical_chance", player_critical_chance);
+        save.putInt("player_eq_helmet", player_eq_helmet);
+        save.putInt("player_eq_armor", player_eq_armor);
+        save.putInt("player_eq_legs", player_eq_legs);
+        save.putInt("player_eq_boots", player_eq_boots);
+        save.putInt("player_eq_weapon", player_eq_weapon);
+        save.putInt("player_eq_shield", player_eq_shield);
+        save.putInt("player_eq_ring_left", player_eq_ring_left);
+        save.putInt("player_eq_ring_right", player_eq_ring_right);
+        save.putInt("player_eq_amulet", player_eq_amulet);
+        save.putInt("player_skill_points", player_skill_points);
+        save.putInt("player_used_hp_sp", player_used_hp_sp);
+        save.putInt("player_used_mp_sp", player_used_mp_sp);
+        save.putInt("player_used_attack_sp", player_used_attack_sp);
+        save.putInt("player_used_defence_sp", player_used_defence_sp);
+        save.putInt("player_used_critical_sp", player_used_critical_sp);
+        save.putInt("player_used_critical_chance_sp", player_used_critical_chance_sp);
+        save.putInt("player_health_potions", player_health_potions);
+        save.putInt("player_mana_potions", player_mana_potions);
+        save.putInt("player_magic_experience", player_magic_experience);
+        save.apply();
 
     }
 
